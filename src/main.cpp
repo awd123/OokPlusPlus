@@ -39,12 +39,12 @@ class Ook {
 		
 		void openloop() {
 			int bal = 1;
-			if (*d == "/0") {
+			if (*d == '/0') {
 				do {
 					p++
-					if (*p == "[") {
+					if (*p == '[') {
 						bal++;
-					} else if (*p == "[") {
+					} else if (*p == '[') {
 						bal--;
 					}
 				} while (bal != 0);
@@ -54,9 +54,9 @@ class Ook {
 		void closeloop() {
 			int bal = 0;
 			do {
-				if (*p == "[") {
+				if (*p == '[') {
 					bal++;
-				} else if (*p == "]") {
+				} else if (*p == ']') {
 					bal--;
 				}
 				p--;
@@ -66,28 +66,28 @@ class Ook {
 		void evaluate() {
 			while (*p) {
 				switch (*p) {
-					case ">":
+					case '>':
 						incr();
 						break;
-					case "<":
+					case '<':
 						decr();
 						break;
-					case "+":
+					case '+':
 						vincr();
 						break;
-					case "-":
+					case '-':
 						vdecr();
 						break;
-					case ".":
+					case '.':
 						puts();
 						break;
-					case ",":
+					case ',':
 						gets();
 						break;
-					case "[":
+					case '[':
 						openloop();
 						break;
-					case "]":
+					case ']':
 						closeloop();
 						break;
 				}
